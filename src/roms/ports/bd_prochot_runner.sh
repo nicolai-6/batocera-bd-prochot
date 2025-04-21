@@ -24,42 +24,42 @@ function main() {
     sleep 1; \
     echo -e \"$($BASEDIR/bd_prochot.sh check_architecture)\";
     if [[ $? == 1 ]]; then echo -e \"${RED}A B O R T I N G . . .\"; sleep 5; exit 1; \
-    else echo -e \"${WHITE}ARCHITECTURE CHECK PASSED \xE2\x9C\x94\"; fi ; \
+    else echo -e \"${WHITE}ARCHITECTURE CHECK PASSED \xE2\x9C\x94\"; fi; \
     sleep 3; \
 
     echo -e \"\nCHECKING CPU VENDOR:\"; \
     sleep 1; \
     echo -e \"$($BASEDIR/bd_prochot.sh check_CPU_vendor)\";
     if [[ $? == 1 ]]; then echo -e \"${RED}A B O R T I N G . . .\"; sleep 5; exit 1; \
-    else echo -e \"${WHITE}CPU VENDOR CHECK PASSED \xE2\x9C\x94\"; fi ; \
+    else echo -e \"${WHITE}CPU VENDOR CHECK PASSED \xE2\x9C\x94\"; fi; \
     sleep 3; \
 
     echo -e \"\nCHECKING REQUIRED BINARIES:\"; \
     sleep 1; \
     echo -e \"$($BASEDIR/bd_prochot.sh check_msr_bins)\";
     if [[ $? == 1 ]]; then echo -e \"${RED}A B O R T I N G . . .\"; sleep 5; exit 1; \
-    else echo -e \"${WHITE}BINARIES CHECK PASSED \xE2\x9C\x94\"; fi ; \
+    else echo -e \"${WHITE}BINARIES CHECK PASSED \xE2\x9C\x94\"; fi; \
     sleep 3; \
 
     echo -e \"\nACTIVATING MSR MODULE:\"; \
     sleep 1; \
     echo -e \"$($BASEDIR/bd_prochot.sh activate_msr_module)\";
     if [[ $? == 1 ]]; then echo -e \"${RED}A B O R T I N G . . .\"; sleep 5; exit 1; \
-    else echo -e \"${WHITE}MODULE ACTIVATED \xE2\x9C\x94\"; fi ; \
+    else echo -e \"${WHITE}MODULE ACTIVATED \xE2\x9C\x94\"; fi; \
     sleep 3; \
 
     echo -e \"\nREADING CURRENT CPU REGISTER VALUE:\"; \
     sleep 1; \
     echo -e \"$($BASEDIR/bd_prochot.sh read_REG)\";
     if [[ $? == 1 ]]; then echo -e \"${RED}A B O R T I N G . . .\"; sleep 5; exit 1; \
-    else echo -e \"${WHITE}REGISTER CHECK PASSED \xE2\x9C\x94\"; fi ; \
+    else echo -e \"${WHITE}REGISTER CHECK PASSED \xE2\x9C\x94\"; fi; \
     sleep 3; \
 
-    echo -e \"\nWRITING DESIRED REGISTER VALUE:\"; \
+    echo -e \"\nTRYING TO WRITE DESIRED REGISTER VALUE:\"; \
     sleep 1; \
     echo -e \"$($BASEDIR/bd_prochot.sh write_REG)\";
     if [[ $? == 1 ]]; then echo -e \"${RED}A B O R T I N G . . .\"; sleep 5; exit 1; \
-    else echo -e \"${WHITE}WRITING REGISTER SUCCESSFUL \xE2\x9C\x94\"; fi ; \
+    else echo -e \"${WHITE}WRITING REGISTER SUCCESSFUL \xE2\x9C\x94\"; fi; \
     sleep 3; \
 
     echo -e \"\n${WHITE}#################### DONE ####################\"

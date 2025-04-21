@@ -70,6 +70,14 @@ function check_msr_bins() {
 # modprobe msr
 function activate_msr_module() {
     modprobe msr
+    if [[ $? == 1 ]]
+    then
+        echo -e "${RED}something went wrong"
+        return 1
+    else
+        echo -e "${GREEN}successful"
+        return 0
+    fi
 }
 
 # read initial CPU REG value
@@ -97,10 +105,10 @@ function write_REG() {
     # verify it worked
     if [[ $($RDMSR_BIN -a -d $CPU_REG_ADDRESS | sort --unique) == $DESIRED_CPU_VALUE ]]
     then
-        echo -e "${GREEN}Desired value: $DEISRED_VALUE set successfully"
+        echo -e "${GREEN}Desired value $DEISRED_VALUE set successfully"
         return 0
     else
-        echo -e "${RED}Desired value: $DEISRED_VALUE NOT set successfully"
+        echo -e "${RED}Desired value $DEISRED_VALUE NOT set successfully"
         return 1
     fi
 }
