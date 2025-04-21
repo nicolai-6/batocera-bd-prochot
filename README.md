@@ -33,7 +33,7 @@
     * remove /userdata/roms/ports/.data/bd_prochot directory
     * remove from Ports gamelist either via emulationstation or gamelist.xml
 
-### disabling bd prochot without installing this app
+### disabling bd prochot in batocera without installing this app
 * copy rdmsr and wrmsr to your batocera instance
 * make it executable `chmod +x rdmsr && chmod +x wrmsr`
 * activate msr module by running `modprobe msr`
