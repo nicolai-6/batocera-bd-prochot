@@ -3,7 +3,7 @@
 ## Providing a tiny msr-tools wrapper script to disable bd-prochot on Intel CPUs
 
 ### facts
-* only supported on specific Intel CPUs - consult your CPU specs and make sure you are suffering from poorly implemented bd-prochot before disabling it - this was tested on an Intel Core I7 9700T CPU
+* only supported on specific Intel CPUs - consult your CPU specs and make sure you are suffering from bd-prochot issues (which can be caused by a lot of reasons) - this was tested on an Intel Core I7 9700T CPU
 * can be run from batocera terminal, SSH or via emulationstation ports section
 * only tested on batocera v41
 * limited to x86_x64 platform
